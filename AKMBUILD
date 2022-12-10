@@ -1,0 +1,8 @@
+modname=bbswitch
+modver=0.8
+built_modules='bbswitch.ko'
+
+build() {
+    touch "$builddir"/Makefile
+    make $MAKEFLAGS -C "$kernel_srcdir" M="$builddir" src="$srcdir" modules
+}
